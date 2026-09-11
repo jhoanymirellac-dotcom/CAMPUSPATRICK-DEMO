@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Campus Patrick - Demo</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,Arial,sans-serif}
+body{background:#f4f5fb;color:#222}
+header{position:sticky;top:0;background:linear-gradient(90deg,#5B21B6,#7C3AED);color:#fff;padding:14px 28px;z-index:10}
+nav{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
+.logo{font-size:24px;font-weight:700}
+nav ul{display:flex;gap:18px;list-style:none;flex-wrap:wrap}
+nav button{background:none;border:none;color:#fff;font-weight:700;cursor:pointer}
+.hero{background:linear-gradient(135deg,#5B21B6,#7C3AED);color:#fff;padding:70px 20px;text-align:center}
+.hero h1{font-size:48px;margin-bottom:12px}
+.hero p{font-size:18px;max-width:760px;margin:auto}
+.btn{margin-top:22px;padding:12px 22px;border:none;border-radius:10px;background:#FFD54F;font-weight:700;cursor:pointer}
+.section{display:none;padding:40px 24px;max-width:1200px;margin:auto}
+.active{display:block}
+.stats,.dashboard,.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:24px}
+.box,.card{background:#fff;border-radius:16px;padding:20px;box-shadow:0 6px 18px rgba(0,0,0,.08)}
+.card img{width:100%;height:150px;object-fit:cover;border-radius:12px;margin-bottom:12px}
+form{display:grid;gap:12px;max-width:520px}
+input,select{padding:10px;border-radius:8px;border:1px solid #ccc}
+table{width:100%;border-collapse:collapse;background:#fff;margin-top:20px;border-radius:12px;overflow:hidden}
+th,td{padding:12px;border-bottom:1px solid #eee;text-align:left}
+th{background:#5B21B6;color:#fff}
+footer{background:#3b0764;color:#fff;text-align:center;padding:24px;margin-top:40px}
+.badge{display:inline-block;background:#e9d5ff;color:#5B21B6;padding:6px 10px;border-radius:999px;font-size:13px}
+</style>
+</head>
+<body>
+<header><nav><div class="logo">🎓 Campus Patrick</div><ul>
+<li><button onclick="show('inicio')">Inicio</button></li>
+<li><button onclick="show('nosotros')">Nosotros</button></li>
+<li><button onclick="show('cursos')">Cursos</button></li>
+<li><button onclick="show('noticias')">Noticias</button></li>
+<li><button onclick="show('podcast')">Podcast</button></li>
+<li><button onclick="show('panel')">Panel</button></li>
+</ul></nav></header>
+
+<section id="inicio" class="section active">
+<div class="hero">
+<h1>Campus Patrick</h1>
+<p>Sistema Inteligente de Gestión Académica — Demostración del proyecto final desarrollado por Patrick Chumpitaz.</p>
+<button class="btn" onclick="show('panel')">Ingresar al Panel</button>
+</div>
+<div class="stats">
+<div class="box"><h2>170</h2><p>Alumnos</p></div>
+<div class="box"><h2>24</h2><p>Cursos</p></div>
+<div class="box"><h2>12</h2><p>Docentes</p></div>
+<div class="box"><h2>96%</h2><p>Asistencia</p></div>
+</div>
+</section>
+
+<section id="nosotros" class="section">
+<h1>Sobre el Proyecto</h1>
+<p style="margin-top:16px;line-height:1.8">Campus Patrick integra portal institucional, noticias, podcast y un panel administrativo conectado en la versión final con Java Spring Boot y SQL Server.</p>
+</section>
+
+<section id="cursos" class="section">
+<h1>Oferta Académica</h1>
+<div class="cards">
+<div class="card"><img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=800&q=80"><h3>Ingeniería de Sistemas</h3><p>Programación, IA y Bases de Datos.</p></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80"><h3>Administración</h3><p>Gestión Empresarial.</p></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80"><h3>Enfermería</h3><p>Formación Integral.</p></div>
+</div>
+</section>
+
+<section id="noticias" class="section">
+<h1>Noticias Institucionales</h1>
+<div class="cards">
+<div class="card"><img src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=800&q=80"><h3>Inicio del Ciclo Académico</h3><p>Más de 500 estudiantes participaron.</p></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b?auto=format&fit=crop&w=800&q=80"><h3>Nuevo Laboratorio Tecnológico</h3><p>Equipado para desarrollo de software.</p></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80"><h3>Conferencia de Innovación</h3><p>Especialistas compartieron tendencias.</p></div>
+</div>
+</section>
+
+<section id="podcast" class="section">
+<h1>Podcast Campus Patrick</h1>
+<div class="box"><span class="badge">Episodio 01</span><h2 style="margin:12px 0">Tecnología e Innovación Educativa</h2><button class="btn" onclick="alert('En la versión final reproducirá audio real.')">▶ Reproducir Demo</button></div>
+</section>
+
+<section id="panel" class="section">
+<h1>Panel Administrativo</h1>
+<div class="dashboard">
+<div class="box"><h2>170</h2><p>Alumnos</p></div>
+<div class="box"><h2>24</h2><p>Cursos</p></div>
+<div class="box"><h2>12</h2><p>Docentes</p></div>
+<div class="box"><h2>96%</h2><p>Asistencia</p></div>
+</div>
+<h2 style="margin:18px 0">Registrar Alumno</h2>
+<form id="f">
+<input id="n" placeholder="Nombre" required>
+<input id="a" placeholder="Apellido" required>
+<input id="d" placeholder="DNI" required>
+<select id="c"><option>Ingeniería de Sistemas</option><option>Administración</option><option>Enfermería</option></select>
+<button class="btn" type="submit">Guardar Alumno</button>
+</form>
+<h2 style="margin-top:34px">Lista de Alumnos</h2>
+<table id="t"><thead><tr><th>DNI</th><th>Nombre</th><th>Curso</th><th>Estado</th></tr></thead>
+<tbody><tr><td>74652189</td><td>Ana Torres</td><td>Ingeniería</td><td>Activo</td></tr><tr><td>71543218</td><td>Carlos Díaz</td><td>Administración</td><td>Activo</td></tr></tbody></table>
+</section>
+
+<footer>Desarrollado por Patrick Chumpitaz • Campus Patrick © 2026</footer>
+
+<script>
+function show(id){document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');window.scrollTo({top:0,behavior:'smooth'});}
+document.getElementById('f').addEventListener('submit',e=>{e.preventDefault();const tr=document.createElement('tr');tr.innerHTML=`<td>${d.value}</td><td>${n.value} ${a.value}</td><td>${c.value}</td><td>Activo</td>`;document.querySelector('#t tbody').appendChild(tr);e.target.reset();alert('Alumno registrado correctamente (Demo).');});
+</script>
+</body>
+</html>
